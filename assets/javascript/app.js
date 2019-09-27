@@ -37,13 +37,15 @@ $(document).ready(function() {
       },
       {
         question: "What color is a tree?",
-        possibles: ["Green", "Brown", "Yellow", "Not enough information given"],
+        possibles: [
+          ["Green", "Brown", "Yellow", "Not enough information given"]
+        ],
         id: "question-five",
         answer: 3
       },
       {
         question: "How much higher can a human jump than a mountain?",
-        possibles: ["3ft", "1meter", "2km", "Mountains can't jump"],
+        possibles: [["3ft", "1meter", "2km", "Mountains can't jump"]],
         id: "question-six",
         answer: 3
       },
@@ -72,33 +74,33 @@ $(document).ready(function() {
 
   $(".startGame").on("click", function() {
     $(".wrapper").show();
-    console.log("hello");
+    console.log("test");
 
     $(".startGame").hide();
-  });
 
-  var number = 120;
-  $("#timeLeft").on("click", run);
+    var number = 120;
 
-  function decrement() {
-    number--;
-    $("#timeLeft").html("<h2>" + number + " seconds" + "</h2>");
-    if (number === 0) {
-      stop();
-      $("#message").html("time up!");
-      checkAnswers();
+    $("#timeLeft").on("click", run);
+
+    function decrement() {
+      number--;
+      $("#timeLeft").html("<h2>" + number + " seconds" + "</h2>");
+      if (number === 0) {
+        stop();
+        $("#message").html("time up!");
+        checkAnswers();
+      }
     }
-  }
+    function run() {
+      counter = setInterval(decrement, 1000);
+    }
 
-  function run() {
-    counter = setInterval(decrement, 1000);
-  }
+    function stop() {
+      clearInterval(counter);
+    }
 
-  function stop() {
-    clearInterval(counter);
-  }
-
-  run();
+    run();
+  });
 
   function formTemplate(data) {
     var qString = "<form id='questionOne'>" + data.question + "<br>";
@@ -161,14 +163,12 @@ $(document).ready(function() {
       }
     }
     $(".results").html(
-      "<br> correct: " +
+      "correct: " +
         correct +
-        ", " +
-        "<span> " +
+        "<br>" +
         "incorrect: " +
         incorrect +
-        ", " +
-        "<span> " +
+        "<br>" +
         "unanswered: " +
         unAnswered
     );
@@ -188,6 +188,6 @@ $(document).ready(function() {
   $("#doneButton").on("click", function() {
     checkAnswers();
     stop();
-    $("#messageDiv").html("<br> Game Over! <br>");
+    $("#messageDiv").html("Game Over!");
   });
 });
