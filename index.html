@@ -2,28 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Trivia Game</title>
-    <link rel="stylesheet" href="assets\css\style.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Totally Trivial Trivia</title>
+  </head>
+  <body>
+    <button class="startGame">Click Me to Play!</button>
+    <div class="wrapper">
+      <h1 class="header">Totally Trivial Trivia</h1>
+      <div class="timer" id="timeLeft"></div>
+      <div class="form" id="questions-container"></div>
+    </div>
+    <button id="doneButton">Submit</button>
+    <div class="message" id="messageDiv"></div>
+    <div class="results"></div>
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-2.2.0.min.js"
     ></script>
-  </head>
-  <body>
-    <div class="container">
-    <h1 id="title">Trivia Game</h1>
-    <div id="subwrapper">
-      <button id="start">Start</button>
-    </div>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
   </body>
-</div>
-  <script type="text/javascript" src="assets/javascript/app.js"></script>
 </html>
