@@ -37,15 +37,13 @@ $(document).ready(function() {
       },
       {
         question: "What color is a tree?",
-        possibles: [
-          ["Green", "Brown", "Yellow", "Not enough information given"]
-        ],
+        possibles: ["Green", "Brown", "Yellow", "Not enough information given"],
         id: "question-five",
         answer: 3
       },
       {
         question: "How much higher can a human jump than a mountain?",
-        possibles: [["3ft", "1meter", "2km", "Mountains can't jump"]],
+        possibles: ["3ft", "1meter", "2km", "Mountains can't jump"],
         id: "question-six",
         answer: 3
       },
@@ -56,18 +54,6 @@ $(document).ready(function() {
         answer: 3
       },
       {
-        question: "What is the capital of Florida?",
-        possibles: [
-          "Miami",
-          "Tampa",
-          "Jacksonville",
-          "Daytona Beach",
-          "Talahassee"
-        ],
-        id: "question-eight",
-        answer: 4
-      },
-      {
         question: "Why do cows moo?",
         possibles: [
           "They feel pain",
@@ -76,7 +62,7 @@ $(document).ready(function() {
           "God speaks with them",
           "They are angry"
         ],
-        id: "question-nine",
+        id: "question-eight",
         answer: 2
       }
     ]
@@ -88,7 +74,7 @@ $(document).ready(function() {
     $(".wrapper").show();
     console.log("hello");
 
-    $(this).hide();
+    $(".startGame").hide();
   });
 
   var number = 120;
@@ -175,12 +161,14 @@ $(document).ready(function() {
       }
     }
     $(".results").html(
-      "correct: " +
+      "<br> correct: " +
         correct +
-        "<br>" +
+        ", " +
+        "<span> " +
         "incorrect: " +
         incorrect +
-        "<br>" +
+        ", " +
+        "<span> " +
         "unanswered: " +
         unAnswered
     );
@@ -200,6 +188,6 @@ $(document).ready(function() {
   $("#doneButton").on("click", function() {
     checkAnswers();
     stop();
-    $("#messageDiv").html("Game Over!");
+    $("#messageDiv").html("<br> Game Over! <br>");
   });
 });
